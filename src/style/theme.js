@@ -28,7 +28,7 @@ const theme = createTheme({
       fontSize: '1.6rem',
     },
   },
-  shadows: ['none', '0 30px 25px -15px rgba(56, 41, 224, 0.05)'],
+  shadows: ['none', '0 30px 25px -15px rgba(56, 41, 224, 0.08)'],
 });
 
 export default theme;
