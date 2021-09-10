@@ -29,12 +29,12 @@ function App() {
         alignItems='flex-end'
         align='center'
       >
-        <Grid item xs={4}>
+        <Grid item xs={11} sm={5} md={4}>
           <SummaryCard
             title='order summary'
             img={hero}
-            content='You can now listen to millions of songs, audiobooks, and podcasts on
-  any device anywhere you like!'
+            content='You can now listen to millions of songs, 
+            audiobooks, and podcasts on any device anywhere you like!'
             alt='hero'
           >
             <Price

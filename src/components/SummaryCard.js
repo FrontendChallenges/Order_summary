@@ -26,10 +26,10 @@ function SummaryCard({ children, title, img, content, alt }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <CardMedia className={classes.media} image={img} height='140' />
+      <CardMedia className={classes.media} image={img} />
       <CardContent>
         <Grid container justifyContent='center'>
-          <Grid item paddingTop={2}>
+          <Grid item>
             <Typography variant='h3' color='textPrimary'>
               {title}
             </Typography>
