@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from './style/theme';
+import SummaryCard from './components/SummaryCard';
+import { Grid, Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  btn: { fontSize: '1.3rem', fontWeight: 500, textTransform: 'none' },
+});
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={theme}>
+      <Grid container xs={4} mx='auto'>
+        <SummaryCard
+          title='order summary'
+          img='./images/pattern-background-desktop.svg'
+          content='You can now listen to millions of songs, audiobooks, and podcasts on
+  any device anywhere you like!'
+          alt='hero'
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Button className={classes.btn} variant='contained' color='primary'>
+            Proceed to Payment
+          </Button>
+        </SummaryCard>
+      </Grid>
+    </ThemeProvider>
   );
 }
 
