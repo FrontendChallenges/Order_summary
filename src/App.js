@@ -2,9 +2,11 @@ import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
 import theme from './style/theme';
 import SummaryCard from './components/SummaryCard';
+import Price from './components/Price';
 import { Grid, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import hero from './images/illustration-hero.svg';
+import icon from './images/icon-music.svg';
 
 const useStyles = makeStyles({
   btn: {
@@ -35,6 +37,14 @@ function App() {
   any device anywhere you like!'
             alt='hero'
           >
+            <Price
+              icon={icon}
+              alt='icon-music'
+              title='Annual Plan'
+              content='$59.99/year'
+              link='change'
+            />
+
             <Button className={classes.btn} variant='contained' color='primary'>
               Proceed to Payment
             </Button>

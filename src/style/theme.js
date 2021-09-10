@@ -1,5 +1,4 @@
 import { createTheme } from '@material-ui/core';
-import shadows from '@material-ui/core/styles/shadows';
 
 const theme = createTheme({
   palette: {

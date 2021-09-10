@@ -29,7 +29,7 @@ function SummaryCard({ children, title, img, content, alt }) {
       <CardMedia className={classes.media} image={img} height='140' />
       <CardContent>
         <Grid container justifyContent='center'>
-          <Grid item>
+          <Grid item paddingTop={2}>
             <Typography variant='h3' color='textPrimary'>
               {title}
             </Typography>
