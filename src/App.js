@@ -7,6 +7,7 @@ import hero from './images/illustration-hero.svg';
 import icon from './images/icon-music.svg';
 import Price from './components/Price';
 import SummaryCard from './components/SummaryCard';
+import Footer from './components/Footer';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -22,34 +23,38 @@ function App() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-        <Grid container justifyContent='center'>
-          <Grid container item xs={11} sm={7} md={6} lg={4} align='center'>
-            <SummaryCard
-              title='Order Summary'
-              img={hero}
-              content='You can now listen to millions of songs, 
+      <main>
+        <Container>
+          <Grid container justifyContent='center'>
+            <Grid container item xs={11} sm={7} md={6} lg={4} align='center'>
+              <SummaryCard
+                title='Order Summary'
+                img={hero}
+                alt='illustration-hero'
+                content='You can now listen to millions of songs, 
             audiobooks, and podcasts on any device anywhere you like!'
-            >
-              <Price
-                icon={icon}
-                alt='icon-music'
-                title='Annual Plan'
-                content='$59.99/year'
-                link='change'
-              />
-              <Button
-                variant='contained'
-                color='primary'
-                className={classes.btn}
               >
-                Proceed to Payment
-              </Button>
-              <Button color='secondary'>Cancel Order</Button>
-            </SummaryCard>
+                <Price
+                  icon={icon}
+                  alt='icon-music'
+                  title='Annual Plan'
+                  content='$59.99/year'
+                  link='change'
+                />
+                <Button
+                  variant='contained'
+                  color='primary'
+                  className={classes.btn}
+                >
+                  Proceed to Payment
+                </Button>
+                <Button color='secondary'>Cancel Order</Button>
+              </SummaryCard>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </main>
+      <Footer />
     </ThemeProvider>
   );
 }

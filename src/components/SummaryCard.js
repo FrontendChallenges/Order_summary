@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
-function SummaryCard({ children, title, img, content }) {
+function SummaryCard({ children, title, img, alt, content }) {
   const classes = useStyles();
   return (
     <Card>
-      <CardMedia className={classes.media} image={img} />
+      <CardMedia className={classes.media} image={img} alt={alt} />
       <CardContent className={classes.cardContents}>
         <Typography variant='h3' color='textPrimary'>
           {title}
