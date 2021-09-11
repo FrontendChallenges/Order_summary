@@ -1,6 +1,19 @@
 import { createTheme } from '@material-ui/core';
 
 const theme = createTheme({
+  overrides: {
+    MuiButton: {
+      root: {
+        textTransform: 'none',
+        width: '100%',
+      },
+    },
+    MuiCard: {
+      root: {
+        borderRadius: '1.5rem',
+      },
+    },
+  },
   palette: {
     primary: {
       light: '#e0e8ff',

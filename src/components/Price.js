@@ -1,25 +1,22 @@
 import React from 'react';
-import { Typography, Grid, CardMedia, Link } from '@material-ui/core';
+import { Typography, Grid, CardMedia, Link, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
+
 const useStyles = makeStyles((theme) => {
   return {
     container: {
       backgroundColor: theme.palette.secondary.light,
-      padding: '2rem 0',
-      marginBottom: '3rem',
       borderRadius: '1rem',
+      padding: '2rem',
     },
     subtitle: {
-      fontWeight: theme.typography.fontWeightMedium,
+      fontWeight: theme.typography.fontWeightBold,
+      padding: '0 1.5rem',
     },
     link: {
       fontWeight: theme.typography.fontWeightMedium,
-      fontSize: '1.6rem',
       fontFamily: theme.typography.fontFamily,
-      padding: '0 1.5rem',
-    },
-    icon: {
-      padding: '0 1.5rem',
+      fontSize: theme.typography.fontSize,
     },
   };
 });
@@ -29,35 +26,27 @@ function Price({ icon, alt, title, content, link }) {
   return (
     <Grid
       container
+      item
       className={classes.container}
       justifyContent='space-between'
-      alignItems='center'
     >
-      <Grid item>
-        <Grid container>
-          <Grid item>
-            <CardMedia
-              component='img'
-              src={icon}
-              height='100%'
-              alt={alt}
-              className={classes.icon}
-            />
-          </Grid>
-          <Grid item>
-            <Typography className={classes.subtitle}>{title}</Typography>
-            <Typography variant='body1' color='textSecondary'>
-              {content}
-            </Typography>
-          </Grid>
+      <Box display='flex'>
+        <Grid item>
+          <CardMedia component='img' src={icon} alt={alt} />
         </Grid>
-      </Grid>
+        <Grid item>
+          <Typography className={classes.subtitle}>{title}</Typography>
+          <Typography variant='body1' color='textSecondary'>
+            {content}
+          </Typography>
+        </Grid>
+      </Box>
 
-      <Grid item>
+      <Box alignSelf='center'>
         <Link href='#' className={classes.link} underline='always'>
           {link}
         </Link>
-      </Grid>
+      </Box>
     </Grid>
   );
 }

@@ -2,26 +2,28 @@ import React from 'react';
 import { Card, CardMedia, CardContent, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-  media: {
-    height: 0,
-    paddingTop: '50%',
-  },
-  card: {
-    borderRadius: '1.5rem',
-  },
-  content: {
-    padding: '4rem',
-    '& > *:not(:last-child)': { marginBottom: '2.5rem' },
-  },
+const useStyles = makeStyles((theme) => {
+  return {
+    media: {
+      height: 0,
+      paddingTop: '50%',
+    },
+    cardContents: {
+      '& > *:not(:last-child)': {
+        marginBottom: '2.5rem',
+      },
+      padding: '3.5rem',
+      [theme.breakpoints.down('sm')]: { padding: '2rem' },
+    },
+  };
 });
 
-function SummaryCard({ children, title, img, content, alt }) {
+function SummaryCard({ children, title, img, content }) {
   const classes = useStyles();
   return (
-    <Card className={classes.card}>
+    <Card>
       <CardMedia className={classes.media} image={img} />
-      <CardContent className={classes.content}>
+      <CardContent className={classes.cardContents}>
         <Typography variant='h3' color='textPrimary'>
           {title}
         </Typography>
