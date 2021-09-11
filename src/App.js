@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => {
       borderRadius: '.8rem',
       fontWeight: theme.typography.fontWeightRegular,
     },
+    container: {
+      padding: '2rem',
+    },
   };
 });
 
@@ -24,35 +27,33 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <main>
-        <Container>
-          <Grid container justifyContent='center'>
-            <Grid container item xs={11} sm={7} md={6} lg={4} align='center'>
-              <SummaryCard
-                title='Order Summary'
-                img={hero}
-                alt='illustration-hero'
-                content='You can now listen to millions of songs, 
+        <Grid container justifyContent='center' className={classes.container}>
+          <Grid container item xs={12} sm={7} md={6} lg={4} align='center'>
+            <SummaryCard
+              title='Order Summary'
+              img={hero}
+              alt='illustration-hero'
+              content='You can now listen to millions of songs, 
             audiobooks, and podcasts on any device anywhere you like!'
+            >
+              <Price
+                icon={icon}
+                alt='icon-music'
+                title='Annual Plan'
+                content='$59.99/year'
+                link='change'
+              />
+              <Button
+                variant='contained'
+                color='primary'
+                className={classes.btn}
               >
-                <Price
-                  icon={icon}
-                  alt='icon-music'
-                  title='Annual Plan'
-                  content='$59.99/year'
-                  link='change'
-                />
-                <Button
-                  variant='contained'
-                  color='primary'
-                  className={classes.btn}
-                >
-                  Proceed to Payment
-                </Button>
-                <Button color='secondary'>Cancel Order</Button>
-              </SummaryCard>
-            </Grid>
+                Proceed to Payment
+              </Button>
+              <Button color='secondary'>Cancel Order</Button>
+            </SummaryCard>
           </Grid>
-        </Container>
+        </Grid>
       </main>
       <Footer />
     </ThemeProvider>

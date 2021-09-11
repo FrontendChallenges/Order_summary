@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => {
       '& > *:not(:last-child)': {
         marginBottom: '2.5rem',
       },
-      padding: '3.5rem',
+      padding: '4rem',
       [theme.breakpoints.down('sm')]: { padding: '2rem' },
     },
   };

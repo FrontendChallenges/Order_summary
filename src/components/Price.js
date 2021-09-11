@@ -7,7 +7,10 @@ const useStyles = makeStyles((theme) => {
     container: {
       backgroundColor: theme.palette.secondary.light,
       borderRadius: '1rem',
-      padding: '2rem',
+      padding: '3rem',
+      '& > *': {
+        [theme.breakpoints.down('sm')]: { flexGrow: 1 },
+      },
     },
     subtitle: {
       fontWeight: theme.typography.fontWeightBold,
