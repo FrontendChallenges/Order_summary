@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => {
     container: {
       backgroundColor: theme.palette.secondary.light,
       padding: '2rem 0',
+      marginBottom: '3rem',
       borderRadius: '1rem',
     },
     subtitle: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => {
     },
     link: {
       fontWeight: theme.typography.fontWeightMedium,
-      fontSize: theme.typography.body1.fontSize,
+      fontSize: '1.6rem',
       fontFamily: theme.typography.fontFamily,
       padding: '0 1.5rem',
     },

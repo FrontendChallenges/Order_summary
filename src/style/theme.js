@@ -19,11 +19,15 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "'Red Hat Display','sans-serif'",
+    fontSize: 16,
     fontWeightRegular: 500,
     fontWeightMedium: 700,
     fontWeightBold: 900,
-    h3: { fontWeight: 700 },
+    h3: { fontWeight: 900, fontSize: '2.8rem' },
     body1: {
+      fontSize: '1.6rem',
+    },
+    button: {
       fontSize: '1.6rem',
     },
   },
